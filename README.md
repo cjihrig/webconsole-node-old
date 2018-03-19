@@ -1,14 +1,14 @@
-# node-cp
+# webconsole-node
 
 Node.js application managed by [ContainerPilot](https://github.com/joyent/containerpilot). This is meant to be a base image that can be extended.
 
 ## Configuration
 
-A basic application can be set up by `COPY`ing nginx and Node.js files (application code, conf file, keys, certs, etc.) into the `node-cp` image. See the Dockerfile in the [example](./example) directory.
+A basic application can be set up by `COPY`ing nginx and Node.js files (application code, conf file, keys, certs, etc.) into the `webconsole-node` image. See the Dockerfile in the [example](./example) directory.
 
 ### Environment Variables
 
-`node-cp` supports the following environment variables:
+`webconsole-node` supports the following environment variables:
 
 - `NODE_START` - The command used to start the Node.js application. Defaults to `node .`.
 - `PORT` - The port used by the Node.js application. Defaults to `5000`.
@@ -16,7 +16,7 @@ A basic application can be set up by `COPY`ing nginx and Node.js files (applicat
 
 ### `prestart.sh`
 
-The `prestart.sh` script in this repository is copied into the container at `/bin/prestart.sh`. This script executes prior to application startup. Images that extend `node-cp` can overwrite this with their own initialization script.
+The `prestart.sh` script in this repository is copied into the container at `/bin/prestart.sh`. This script executes prior to application startup. Images that extend `webconsole-node` can overwrite this with their own initialization script.
 
 ## Sample Application
 
