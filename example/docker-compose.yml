@@ -5,9 +5,7 @@ example:
   environment:
     - CONSUL=consul
     - HEALTH_ENDPOINT=health
-    - NGINX_CONFIG=/etc/nginx/nginx.conf
     - NODE_START=node app.js
     - PORT=5000
   ports:
-    - 80:80
-    - 443:443
+    - 80:5000

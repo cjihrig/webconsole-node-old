@@ -1,7 +1,7 @@
 FROM node:8-alpine
 
 RUN apk update \
-    && apk add --update curl bash nginx openssl openssh \
+    && apk add --update curl bash openssl openssh \
     && apk upgrade \
     && rm -rf /var/cache/apk/*
 
@@ -28,8 +28,5 @@ ENV CONTAINERPILOT=${CONTAINERPILOT_PATH}
 COPY ./prestart.sh /bin/prestart.sh
 RUN chmod 700 /bin/prestart.sh
 COPY ./containerpilot.json5 /etc/containerpilot.json5
-
-# Add Node.js utilities
-COPY ./expand-envvars.js /bin/expand-envvars.js
 
 CMD ["containerpilot"]

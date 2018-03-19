@@ -1,9 +1,4 @@
-FROM continuation/nginx-node-cp:latest
-
-# Setup nginx
-COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./selfsigned.crt /etc/nginx/certs/server.crt
-COPY ./selfsigned.key /etc/nginx/certs/server.key
+FROM cjihrig/node-cp:0.0.1
 
 # Setup the Node.js app
 RUN mkdir -p /opt/app/
